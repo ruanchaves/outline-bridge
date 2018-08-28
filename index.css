@@ -1,0 +1,44 @@
+html {
+    font-family: Arial, Helvetica, sans-serif;
+}
+section {
+    padding: 1em;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    width: 25%;
+}
+section p {
+    text-align: center;
+    font-size: 1em;
+    font-weight: bold; 
+}
+#loading, #error {
+    visibility: hidden;
+}
+.loading-animation {
+    height: 0.5em;
+    width: 100%;
+    background: linear-gradient(270deg, #4d4d4d, #ffffff, #4d4d4d);
+    background-size: 600% 600%;
+    -webkit-animation: AnimationName 4s ease infinite;
+    -moz-animation: AnimationName 4s ease infinite;
+    animation: AnimationName 4s ease infinite;
+}
+@-webkit-keyframes AnimationName {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 51%}
+    100%{background-position:0% 50%}
+}
+@-moz-keyframes AnimationName {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 51%}
+    100%{background-position:0% 50%}
+}
+@keyframes AnimationName {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 51%}
+    100%{background-position:0% 50%}
+}
