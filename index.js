@@ -40,6 +40,7 @@ function handleRequest() {
             const short_code = json_data.data.short_code;
             if (short_code != undefined) {
                 window.location.replace("https://outline.com/" + short_code);
+                return;
             } else {
                 showError();
             }
