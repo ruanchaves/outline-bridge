@@ -10,20 +10,20 @@ if ((source_url == null) || (source_url == undefined)) {
 function showLoading() {
     document.getElementById("loading")
         .style
-        .visibility="visible";
+        .visibility = "visible";
 }
 
 function HideLoading() {
     document.getElementById("loading")
         .style
-        .visibility="hidden";
+        .visibility = "hidden";
 }
 
 function showError() {
     HideLoading();
     document.getElementById("error")
         .style
-        .visibility="visible";
+        .visibility = "visible";
 }
 
 function makeRequest() {
@@ -40,8 +40,11 @@ function handleRequest() {
             const short_code = json_data.data.short_code;
             if (short_code != undefined) {
                 window.location.replace("https://outline.com/" + short_code);
+            } else {
+                showError();
             }
         } catch (e) {
+            showError();
         }
     }
     showError();
