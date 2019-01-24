@@ -1,55 +1,14 @@
 const source_url = getParameterByName("source_url");
 
-if ((source_url == null) || (source_url == undefined)) {
-    window.location.replace("https://outline.com/");
+if (source_url != null) {
+    window.location.replace("https://outline.com/${source_url}");
 } else {
-    showLoading();
-    makeRequest();
+    window.location.replace("https://outline.com/");
 }
 
-function showLoading() {
-    document.getElementById("loading")
-        .style
-        .visibility = "visible";
-}
-
-function HideLoading() {
-    document.getElementById("loading")
-        .style
-        .visibility = "hidden";
-}
-
-function showError() {
-    HideLoading();
-    document.getElementById("error")
-        .style
-        .visibility = "visible";
-}
-
-function makeRequest() {
-    const xhr = new XMLHttpRequest()
-    xhr.onload = handleRequest;
-    xhr.open("GET", "https://outline-api.com/api/parse_article?source_url=" + source_url, true);
-    xhr.send();
-}
-
-function handleRequest() {
-    if (this.DONE && this.status == 200) {
-        try {
-            json_data = JSON.parse(this.response);
-            const short_code = json_data.data.short_code;
-            if (short_code != undefined) {
-                window.location.replace("https://outline.com/" + short_code);
-                return;
-            } else {
-                showError();
-            }
-        } catch (e) {
-            showError();
-        }
-    }
-    showError();
-}
+// As linhas adicionais de código foram removidas
+// Já que não faz-se mais necessária a utilização
+// De uma ponte para intermediar as requisições
 
 // https://stackoverflow.com/questions/901115/how-can-i-get-query-string-values-in-javascript
 
