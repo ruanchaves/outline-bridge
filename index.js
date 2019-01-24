@@ -29,7 +29,7 @@ function showError() {
 function makeRequest() {
     const xhr = new XMLHttpRequest()
     xhr.onload = handleRequest;
-    xhr.open("GET", "https://outlineapi.com/parse_article?source_url=" + source_url, true);
+    xhr.open("GET", "https://outline-api.com/api/parse_article?source_url=" + source_url, true);
     xhr.send();
 }
 
