@@ -1,9 +1,9 @@
-const source_url = getParameterByName("source_url");
+const source_url = getParameterByName('source_url');
 
-if (source_url != null) {
+if (!!source_url) {
     window.location.replace(`https://outline.com/${source_url}`);
 } else {
-    window.location.replace("https://outline.com/");
+    window.location.replace('https://outline.com/');
 }
 
 // As linhas adicionais de código foram removidas
