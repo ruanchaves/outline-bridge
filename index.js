@@ -1,7 +1,7 @@
 const source_url = getParameterByName("source_url");
 
 if (source_url != null) {
-    window.location.replace("https://outline.com/${source_url}");
+    window.location.replace(`https://outline.com/${source_url}`);
 } else {
     window.location.replace("https://outline.com/");
 }
